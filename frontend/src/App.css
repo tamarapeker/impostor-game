@@ -1,0 +1,192 @@
+/* --- Reset & Global --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #181a20;
+  color: #f3f3f3;
+  display: grid;
+  place-items: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Main Container --- */
+.impostor-root {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* --- Title --- */
+.impostor-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- Content boxes (Login, Lobby, Game) --- */
+.impostor-login-box, 
+.impostor-lobby-box, 
+.impostor-game-box {
+  width: 100%;
+  background: #23242b;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: slideUp 0.3s ease-out;
+}
+
+/* --- Form & Inputs --- */
+.impostor-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #30323b;
+  background: #181a20;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.impostor-input:focus {
+  border-color: #4c4d54;
+}
+
+/* --- Buttons --- */
+.impostor-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #522e8b, #421e5c);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.impostor-btn:active {
+  transform: scale(0.98);
+}
+
+.impostor-btn:disabled {
+  background: #444;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* --- Lobby & Lista --- */
+.impostor-room {
+  text-align: center;
+  color: #b3e5fc;
+  font-size: 1.2rem;
+}
+
+.impostor-player-list {
+  list-style: none;
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.impostor-player-list li {
+  padding: 10px;
+  border-bottom: 1px solid #30323b;
+  text-align: center;
+}
+
+.impostor-player-list li:last-child {
+  border-bottom: none;
+}
+
+/* --- Admin & Select --- */
+.impostor-admin-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #30323b;
+}
+
+.impostor-select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #181a20;
+  color: #fff;
+  border: 1px solid #30323b;
+  font-size: 1rem;
+}
+
+/* --- Cards de Juego --- */
+.impostor-card {
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.impostor-card-impostor {
+  background: rgba(183, 28, 28, 0.2);
+  border: 2px solid #ff5252;
+}
+
+.impostor-card-word {
+  background: rgba(27, 94, 32, 0.2);
+  border: 2px solid #69f0ae;
+}
+
+.impostor-word {
+  display: block;
+  font-size: 1.8rem;
+  color: #69f0ae;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- Animaciones --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Mobile First Responsiveness --- */
+@media (max-width: 480px) {
+  .impostor-root {
+    padding: 10px;
+  }
+  .impostor-title {
+    font-size: 1.8rem;
+  }
+}
