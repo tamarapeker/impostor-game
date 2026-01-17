@@ -4,7 +4,11 @@ import './App.css';
 
 const socket = io(window.location.hostname === 'localhost' 
   ? 'http://localhost:3001' 
-  : window.location.origin
+  : window.location.origin,
+  {
+    transports: ['websocket'], 
+    upgrade: false
+  }
 );
 
 function App() {
